@@ -1,17 +1,11 @@
 import React from "react";
-import MenuItem from "../../components/menu-item/MenuItem";
+import DirectoryMenu from "../../components/directory-menu/DirectoryMenu";
 import "./homepage.css";
 
 function Homepage() {
   return (
     <section className="home-container">
-      <div className="directory-menu">
-        <MenuItem title="Hats" subtitle="Shop Now" />
-        <MenuItem title="Jackets" subtitle="Shop Now" />
-        <MenuItem title="Mens'" subtitle="Shop Now" />
-        <MenuItem title="Womens'" subtitle="Shop Now" />
-        <MenuItem title="Womens'" subtitle="Shop Now" />
-      </div>
+      <DirectoryMenu />
     </section>
   );
 }
