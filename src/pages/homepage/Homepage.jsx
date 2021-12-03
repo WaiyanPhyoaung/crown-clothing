@@ -2,7 +2,7 @@ import React from "react";
 import DirectoryMenu from "../../components/directory-menu/DirectoryMenu";
 import "./homepage.css";
 
-function Homepage() {
+function Homepage(props) {
   return (
     <section className="home-container">
       <DirectoryMenu />
