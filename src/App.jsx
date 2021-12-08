@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./app.css";
 import Homepage from "./pages/homepage/Homepage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HatPage from "./pages/hatpage/HatPage";
+import ShopPage from "./pages/shoppage/ShopPage";
+import SHOP_DATA from "./shopData";
 
 function App() {
+  const [collections, setCollections] = useState(SHOP_DATA);
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/hats" element={<HatPage />} />
+        <Route path="/shop" element={<ShopPage />} />
       </Routes>
     </Router>
   );
