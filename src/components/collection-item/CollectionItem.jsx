@@ -10,7 +10,7 @@ function CollectionItem(props) {
       </div>
       <div className="col-btn">
         <p>{name}</p>
-        <p>{price}</p>
+        <p>${price}</p>
       </div>
     </div>
   );

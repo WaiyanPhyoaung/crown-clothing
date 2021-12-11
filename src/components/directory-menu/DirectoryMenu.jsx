@@ -1,5 +1,4 @@
 import React from "react";
-
 import { sections } from "../../data";
 import MenuItem from "../menu-item/MenuItem";
 import "./directoryMenu.css";

@@ -1,0 +1,16 @@
+.header-container {
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-links {
+  width: 100%;
+  padding: 0;
+  display: flex;
+}
+.nav-item a {
+  margin: 1rem;
+  color: var(--primary);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}

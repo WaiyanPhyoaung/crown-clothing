@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 10px 50px;
   font-weight: bold;
   color: #4a4a4a;
 }
@@ -10,4 +10,10 @@ body {
 }
 p {
   margin: 0;
+}
+ul {
+  list-style-type: none;
+}
+li a {
+  text-decoration: none;
 }
