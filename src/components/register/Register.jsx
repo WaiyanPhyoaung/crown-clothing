@@ -1,14 +1,18 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { initialValues, validationSchema } from "./signInData";
-import "./signIn.css";
+import { initialValues, validationSchema } from "./registerData";
+import "./register.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "../../redux/currentUserSlice";
 
-function SignIn() {
+function Register() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const submitHandler = (values, submitProps) => {
     console.log(values);
+    dispatch(setCurrentUser(values));
     submitProps.setSubmitting(false);
     submitProps.resetForm(true);
     navigate("/");
@@ -17,8 +21,8 @@ function SignIn() {
   return (
     <div className="signIn-container">
       <div className="signIn-header">
-        <h3>Already Have an account?</h3>
-        <h5>Sign in with your email & password.</h5>
+        <h3>Don't have an account?</h3>
+        <h5>Sign up with your email & password.</h5>
       </div>
       <div className="form-container">
         <div className="signIn-form">
@@ -31,6 +35,14 @@ function SignIn() {
               console.log("Formik props", formik);
               return (
                 <Form>
+                  <div className="form-group">
+                    <Field type="text" name="username" placeholder="Username" />
+                    <ErrorMessage
+                      name="username"
+                      component="span"
+                      className="error-message"
+                    />
+                  </div>
                   <div className="form-group">
                     <Field type="email" name="email" placeholder="Email" />
                     <ErrorMessage
@@ -51,20 +63,26 @@ function SignIn() {
                       className="error-message"
                     />
                   </div>
+                  <div className="form-group">
+                    <Field
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="Confirm Password"
+                    />
+                    <ErrorMessage
+                      name="confirmPassword"
+                      component="span"
+                      className="error-message"
+                    />
+                  </div>
                   <div className="signIn-footer">
                     <button
                       type="submit"
                       className="signIn-btn"
                       disabled={!formik.isValid || formik.isSubmitting}
                     >
-                      SignIn
+                      Register
                     </button>
-                    <p
-                      className="create-account"
-                      onClick={() => navigate("/register")}
-                    >
-                      Create a new account
-                    </p>
                   </div>
                 </Form>
               );
@@ -75,4 +93,4 @@ function SignIn() {
     </div>
   );
 }
-export default SignIn;
+export default Register;

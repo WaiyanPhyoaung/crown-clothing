@@ -14,3 +14,16 @@
   font-size: 1.2rem;
   text-transform: uppercase;
 }
+.signedIn-container {
+  display: flex;
+}
+.shopping-icon {
+  width: 30px;
+  font-weight: bold;
+  color: darkgreen;
+}
+.item-count {
+  margin-top: -18px;
+  margin-left: -10px;
+  color: green;
+}
