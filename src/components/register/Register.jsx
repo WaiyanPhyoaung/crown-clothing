@@ -32,7 +32,7 @@ function Register() {
             onSubmit={submitHandler}
           >
             {(formik) => {
-              console.log("Formik props", formik);
+              // console.log("Formik props", formik);
               return (
                 <Form>
                   <div className="form-group">

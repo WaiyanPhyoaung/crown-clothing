@@ -1,11 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentUser: {
-    username: "",
-    email: "",
-    password: "",
-  },
+  username: "waiyan",
+  email: "abc@gmail.com",
+  password: "abc",
 };
 
 export const currentUserSlice = createSlice({
@@ -13,10 +11,11 @@ export const currentUserSlice = createSlice({
   initialState,
   reducers: {
     setCurrentUser: (state, action) => {
-      state.currentUser = action.payload;
+      console.log(state);
+      return action.payload;
     },
     clearCurrentUser: (state) => {
-      state.currentUser = {};
+      return {};
     },
   },
 });

@@ -2,6 +2,7 @@
   margin: 2rem 1rem;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .nav-links {
   width: 100%;
@@ -17,13 +18,19 @@
 .signedIn-container {
   display: flex;
 }
+.dropdown {
+  position: relative;
+}
 .shopping-icon {
   width: 30px;
-  font-weight: bold;
-  color: darkgreen;
+  cursor: pointer;
+  filter: invert(27%) sepia(3%) saturate(26%) hue-rotate(345deg) brightness(97%)
+    contrast(81%);
 }
+
 .item-count {
-  margin-top: -18px;
-  margin-left: -10px;
-  color: green;
+  position: absolute;
+  bottom: 25px;
+  right: 5px;
+  color: orangered;
 }

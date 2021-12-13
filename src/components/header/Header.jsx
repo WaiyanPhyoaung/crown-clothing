@@ -5,9 +5,16 @@ import "./Header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCurrentUser } from "../../redux/currentUserSlice";
 import cart from "../../assets/shopping-cart.svg";
+import CartDropdown from "../cart-dropdown/CartDropdown";
+import { store } from "../../redux/store";
+import { toggleDropdown } from "../../redux/cartDropdownSlice";
 
 function Header() {
-  const { currentUser } = useSelector((state) => state.currentUser);
+  console.log(store.getState());
+  const currentUser = useSelector((state) => state.currentUser);
+  const cartDropdown = useSelector((state) => state.cartDropdown);
+  const items = useSelector((state) => state.items);
+
   const dispatch = useDispatch();
 
   return (
@@ -31,8 +38,15 @@ function Header() {
               >
                 <Link to="#">Sign out</Link>
               </li>
-              <img src={cart} alt="shopping-cart" className="shopping-icon" />
-              <span className="item-count">5</span>
+              <div
+                className="dropdown"
+                onClick={() => dispatch(toggleDropdown())}
+              >
+                <img src={cart} alt="shopping-cart" className="shopping-icon" />
+                <span className="item-count">
+                  {items.length > 0 && items.length}
+                </span>
+              </div>
             </div>
           ) : (
             <li className="nav-item">
@@ -41,6 +55,7 @@ function Header() {
           )}
         </ul>
       </div>
+      {cartDropdown && <CartDropdown />}
     </div>
   );
 }
